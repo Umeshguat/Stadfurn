@@ -1,0 +1,56 @@
+.cta-banner {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.cta-banner-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80') center/cover no-repeat;
+}
+
+.cta-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(17,17,17,0.88) 0%, rgba(17,17,17,0.75) 100%);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.cta-content p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-actions .btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.cta-actions .btn-primary svg,
+.cta-actions .btn-outline svg {
+  transition: transform 0.3s ease;
+}

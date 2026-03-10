@@ -1,0 +1,203 @@
+.contact {
+  padding: 120px 0;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image */
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    url('https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=1200&q=60') center/cover no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  position: relative;
+}
+
+.contact-left .section-title {
+  color: var(--white);
+}
+
+.contact-left .section-subtitle {
+  color: var(--gray-400);
+  margin-bottom: 40px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(201, 169, 97, 0.05);
+  transform: translateX(6px);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.15), rgba(201, 169, 97, 0.05));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+  background: var(--gold);
+  box-shadow: 0 4px 20px rgba(201, 169, 97, 0.3);
+}
+
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+  transition: stroke 0.3s;
+}
+
+.contact-item:hover .contact-icon svg {
+  stroke: var(--dark);
+}
+
+.contact-item h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.contact-item p,
+.contact-item a {
+  font-size: 0.95rem;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+.contact-item a {
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  color: var(--gold);
+}
+
+/* ── Form ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 36px;
+  backdrop-filter: blur(10px);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  color: var(--white);
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-700);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--gold);
+  background: rgba(201, 169, 97, 0.05);
+  box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23999' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.form-group select option {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.contact-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 16px;
+  font-size: 0.95rem;
+}
+
+.contact-submit.submitted {
+  background: #2ecc71;
+  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.3);
+}
+
+@media (max-width: 968px) {
+  .contact { padding: 80px 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form { padding: 24px; }
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.jsx$|\\\\.css$\")",
+      "Bash(npm install:*)",
+      "Bash(curl -L -o hero-bg.jpg \"https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85\")",
+      "Bash(curl -L -o hero-banner.jpg \"https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=85\")",
+      "Bash(curl -L -o hero-project.jpg \"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=85\")",
+      "Bash(npx vite:*)"
+    ]
+  }
+}
