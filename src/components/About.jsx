@@ -48,6 +48,11 @@ export default function About() {
 
   return (
     <section className="about" id="about">
+      {/* Background elements */}
+      <div className="about-bg-grid" />
+      <div className="about-glow about-glow--1" />
+      <div className="about-glow about-glow--2" />
+
       <div className="container">
         <div className="about-grid">
           <div className="about-visual reveal-left" ref={refLeft}>
@@ -80,12 +85,15 @@ export default function About() {
 
           <div className="about-right reveal-right" ref={refRight}>
             <span className="section-label">About STADFURN</span>
-            <h2 className="section-title">Single-Point Responsibility for Complex Projects</h2>
+            <h2 className="section-title">
+              Single-Point Responsibility for <span className="about-gold">Complex Projects</span>
+            </h2>
             <p className="section-subtitle">
               STADFURN is an integrated EPC company that brings engineering excellence,
               strategic procurement, and robust construction capabilities under one roof.
               We take ownership of your project from blueprint to handover.
             </p>
+            <div className="about-header-line" />
             <div className="about-points">
               {points.map((p, i) => (
                 <div className="about-point" key={p.title} style={{ transitionDelay: `${i * 150}ms` }}>
