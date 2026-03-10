@@ -87,6 +87,11 @@
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.industry-item.reveal-scale {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .industry-item:hover {
   transform: translateY(-8px) scale(1.02);
   z-index: 2;
