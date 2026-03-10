@@ -1,4 +1,5 @@
 import useReveal from '../hooks/useReveal'
+import useCounter from '../hooks/useCounter'
 import './Services.css'
 
 const services = [
@@ -83,29 +84,67 @@ function ServiceCard({ service, index }) {
             <li key={item}>{item}</li>
           ))}
         </ul>
+        <div className="service-cta">
+          <span>Learn More</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="12" height="12"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
       </div>
+
+      {/* Bottom accent line */}
+      <div className="service-line" />
+    </div>
+  )
+}
+
+function ServiceStat({ end, suffix, label }) {
+  const [count, counterRef] = useCounter(end, 2000)
+  return (
+    <div className="services-stat" ref={counterRef}>
+      <h3>{count}{suffix}</h3>
+      <p>{label}</p>
     </div>
   )
 }
 
 export default function Services() {
   const headerRef = useReveal()
+  const statsRef = useReveal(200)
 
   return (
     <section className="services" id="services">
+      {/* Background elements */}
+      <div className="services-bg-grid" />
+      <div className="services-glow services-glow--1" />
+      <div className="services-glow services-glow--2" />
+
       <div className="container">
         <div className="services-header reveal" ref={headerRef}>
           <span className="section-label">What We Do</span>
-          <h2 className="section-title">Comprehensive EPC Services</h2>
+          <h2 className="section-title">
+            Comprehensive EPC <span className="services-gold">Services</span>
+          </h2>
           <p className="section-subtitle">
             From concept through commissioning, we deliver integrated solutions
             that combine engineering expertise with flawless execution.
           </p>
+          <div className="services-header-line" />
         </div>
+
         <div className="services-grid">
           {services.map((s, i) => (
             <ServiceCard key={s.title} service={s} index={i} />
           ))}
+        </div>
+
+        {/* Stats bar */}
+        <div className="services-stats reveal" ref={statsRef}>
+          <ServiceStat end={7} suffix="+" label="Core Services" />
+          <div className="services-stat-divider" />
+          <ServiceStat end={200} suffix="+" label="Projects Delivered" />
+          <div className="services-stat-divider" />
+          <ServiceStat end={15} suffix="+" label="Years Experience" />
+          <div className="services-stat-divider" />
+          <ServiceStat end={98} suffix="%" label="On-Time Delivery" />
         </div>
       </div>
     </section>
