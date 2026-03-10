@@ -91,11 +91,11 @@ function HeroImageCard() {
     >
       <div className={`hero-image-wrapper ${hovered ? 'hovered' : ''}`}>
         <div className="hero-img-main">
-          <img src="/hero-banner.jpg" alt="STADFURN Construction Project" loading="eager" />
+          <img src="/hero-project.jpg" alt="STADFURN Construction Project" loading="eager" />
           <div className="hero-img-overlay" />
         </div>
         <div className="hero-img-float">
-          <img src="/hero-project.jpg" alt="Modern Architecture" loading="eager" />
+          <img src="/hero-banner.jpg" alt="Modern Architecture" loading="eager" />
           <div className="hero-img-float-border" />
         </div>
         <div className="hero-img-badge">
